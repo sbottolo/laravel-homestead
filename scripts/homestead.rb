@@ -122,11 +122,15 @@ class Homestead
 
     # Register All Of The Configured Shared Folders
     if settings.include? 'folders'
+    
+      # Sort folders to keep vagrant-winnfsd happy
+      settings["folders"].sort! { |a,b| a["map"].length <=> b["map"].length }
+    
       settings["folders"].each do |folder|
         mount_opts = []
 
         if (folder["type"] == "nfs")
-            mount_opts = folder["mount_options"] ? folder["mount_options"] : ['actimeo=1']
+            mount_opts = folder["mount_options"] ? folder["mount_options"] : ['nolock,vers=3,udp,noatime']
         elsif (folder["type"] == "smb")
             mount_opts = folder["mount_options"] ? folder["mount_options"] : ['vers=3.02', 'mfsymlinks']
         end
