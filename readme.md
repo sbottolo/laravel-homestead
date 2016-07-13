@@ -1,4 +1,4 @@
-# Laravel Homestead
+# Laravel Homestead by shadowdroid
 
 The official Laravel local development environment.
 
