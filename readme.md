@@ -22,11 +22,15 @@ Install Vagrant plugins
 
 Official documentation for [Vagrant plugins installation](https://www.vagrantup.com/docs/plugins/usage.html)
 
+Plugin list:
+- vagrant-share    (1.1.9)
+- vagrant-vbguest  (0.14.2)
+- vagrant-winnfsd  (1.3.1)
+
 ```
 
 vagrant plugin install vagrant-share
 vagrant plugin install vagrant-vbguest
 vagrant plugin install vagrant-winnfsd
-
 
 ```
