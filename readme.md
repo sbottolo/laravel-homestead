@@ -16,9 +16,14 @@ Homestead runs on any Windows, Mac, or Linux system, and includes the Nginx web 
 Official documentation [is located here](http://laravel.com/docs/homestead).
 
 
-### Solve performance issues
+## Requirements for Windows
+- VirtualBox 5.1.14
+- Vagrant 1.9.1
 
-Install Vagrant plugins
+
+## Solve performance issues
+
+### Vagrant plugins
 
 Official documentation for [Vagrant plugins installation](https://www.vagrantup.com/docs/plugins/usage.html)
 
@@ -33,4 +38,19 @@ vagrant plugin install vagrant-share
 vagrant plugin install vagrant-vbguest
 vagrant plugin install vagrant-winnfsd
 
+```
+
+### Homestead.yaml NFS config for Windows
+
+```
+[...]
+
+folders:
+    - map: ~/your/path
+      to: /vagrant/path
+      type: "nfs"
+      owner: "vagrant"
+      group: "vagrant"
+      mount_options: ['nolock,vers=3,udp,noatime']
+      
 ```
